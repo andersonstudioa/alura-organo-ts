@@ -17,6 +17,7 @@ const Formulario = (props: FormularioProps) => {
     //O useState faz com que o componente reaja a alteração de volar e seja novamente renderizado no DOM
     const [nome, setNome] = useState('')
     const [cargo, setCargo] = useState('')
+    const [data, setData] = useState('')
     const [imagem, setImagem] = useState('')
     const [time, setTime] = useState('')
 
@@ -32,6 +33,7 @@ const Formulario = (props: FormularioProps) => {
         setNome('')
         setCargo('')
         setImagem('')
+        setData('')
         setTime('')
     }
 
@@ -52,6 +54,14 @@ const Formulario = (props: FormularioProps) => {
                     placeholder="Digite seu "
                     valor={cargo}
                     aoAlterado={valor => setCargo(valor)}
+                />
+                <CampoTexto
+                    required={true}
+                    label="Data de entrada no time"
+                    placeholder=""
+                    valor={data}
+                    aoAlterado={valor => setData(valor)}
+                    tipo="date"
                 />
                 <CampoTexto
                     label="Imagem"
