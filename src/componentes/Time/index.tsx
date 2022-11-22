@@ -1,3 +1,7 @@
+<<<<<<< HEAD:src/componentes/Time/index.tsx
+=======
+import React from 'react'
+>>>>>>> 3a096585d15782a3f42d862ac152d12ccfa0bdbf:src/componentes/Time/index.js
 import { IColaborador } from '../../compartilhado/interfaces/IColaborador'
 import Colaborador from "../Colaborador"
 import "./Time.css"
