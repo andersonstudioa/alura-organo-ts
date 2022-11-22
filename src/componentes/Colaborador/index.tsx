@@ -4,11 +4,12 @@ interface ColaboradorProps {
     nome: string
     imagem: string
     cargo: string
+    data: string
     corPrimaria: string
 }
 
 //Operador de desestruturação do JS (diferente do props)
-const Colaborador = ({nome, imagem, cargo, corPrimaria}: ColaboradorProps) => {
+const Colaborador = ({nome, imagem, cargo, corPrimaria, data}: ColaboradorProps) => {
     
     const cssCabecalho = {backgroundColor: corPrimaria}
 
@@ -20,6 +21,7 @@ const Colaborador = ({nome, imagem, cargo, corPrimaria}: ColaboradorProps) => {
             <div className="rodape-colaborador">
                 <h4>{nome}</h4>
                 <p>{cargo}</p>
+                <p>{new Date(data).toLocaleDateString()}</p>
             </div>
         </div>
     )

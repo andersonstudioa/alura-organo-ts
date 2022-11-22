@@ -27,7 +27,8 @@ const Formulario = (props: FormularioProps) => {
             nome,
             cargo,
             imagem,
-            time
+            time,
+            data
         })
         //Limpar
         setNome('')

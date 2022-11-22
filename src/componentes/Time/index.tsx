@@ -30,6 +30,7 @@ const Time = (props: TimeProps) => {
                     key={colaborador.nome} 
                     nome={colaborador.nome} 
                     cargo={colaborador.cargo} 
+                    data={colaborador.data} 
                     imagem={colaborador.imagem}
                     corPrimaria={props.corPrimaria}
                 />)}
