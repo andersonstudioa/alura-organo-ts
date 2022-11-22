@@ -1,7 +1,20 @@
-import Colaborador from '../Colaborador'
+import React from 'react'
+import { IColaborador } from '../../compartilhado/interfaces/IColaborador'
+import Colaborador from "../Colaborador"
 import "./Time.css"
 
-const Time = (props) => {
+interface TimeProps {
+    corPrimaria: string
+    corSecundaria: string
+    nome: string
+    colaboradores: IColaborador[] //o "[]" indica que é uma lista
+    //A linha abaixo representa um hack que funciona
+    //colaboradores: {nome: string, cargo: string, imagem: string}[]
+    //Devido aos colaboradores serem entidades que podem ser usadas por toda a aplicação
+    //é aconcelhavel criar interfaces compartilhadas (/src/compartilhado)
+}
+
+const Time = (props: TimeProps) => {
 
     //Recebendo as propriedades do objeto times do App.js
     const cssSection = { backgroundColor: props.corSecundaria }
@@ -10,8 +23,7 @@ const Time = (props) => {
     return (
         //Renderização condicional similar a um if
         //Retorna somente o array colaboradores que possuir valor
-        (props.colaboradores.length > 0) &&
-        <section className="time" style={cssSection}>
+        (props.colaboradores.length > 0) ? <section className="time" style={cssSection}>
             <h3 style={cssH3}>{props.nome}</h3>
             <div className='colaboradores'>
                 {props.colaboradores.map( colaborador => 
@@ -23,8 +35,9 @@ const Time = (props) => {
                     corPrimaria={props.corPrimaria}
                 />)}
             </div>
-            
         </section>
+        :
+        <></>
     )
 }
 
