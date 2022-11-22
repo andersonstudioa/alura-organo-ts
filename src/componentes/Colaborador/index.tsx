@@ -1,7 +1,14 @@
 import "./Colaborador.css"
 
+interface ColaboradorProps {
+    nome: string
+    imagem: string
+    cargo: string
+    corPrimaria: string
+}
+
 //Operador de desestruturação do JS (diferente do props)
-const Colaborador = ({nome, imagem, cargo, corPrimaria}) => {
+const Colaborador = ({nome, imagem, cargo, corPrimaria}: ColaboradorProps) => {
     
     const cssCabecalho = {backgroundColor: corPrimaria}
 

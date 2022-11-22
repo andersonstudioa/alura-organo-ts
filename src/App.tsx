@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { IColaborador } from './compartilhado/interfaces/IColaborador';
 import Banner from './componentes/Banner';
 import Formulario from './componentes/Formulario';
 import Rodape from './componentes/Rodape';
@@ -9,7 +10,7 @@ function App() {
 
   const times = [
     {
-      nome: 'Programaçãos',
+      nome: 'Programação',
       corPrimaria: '#57C278',
       corSecundaria: '#D9F7E9'
     },
@@ -63,21 +64,16 @@ function App() {
     }
   ]
 
-  const [colaboradores, setColaboradores] = useState([])
+  const [colaboradores, setColaboradores] = useState<IColaborador[]>([])
 
-  const aoNovoColaboradorAdicionado = (colaborador) => {
-
-    //A instrução 'debugger' permite ao Chrome (v8+) parar o fluxo do App.js e debuggar linha a linha.
-    //É possível até digitar o nome da variável no console para veriricar seu valor.
-    debugger
-
+  const aoNovoColaboradorAdicionado = (colaborador: IColaborador) => {
     //Esta sintaxe é similar a de criar uma variável temporária para receber o novo colaborador e acrescentar aos anteriores
     setColaboradores([...colaboradores, colaborador])
   }
 
   return (
     <div className="App">
-      <Banner />
+      <Banner enderecoImagem='/imagens/banner.png'/>
       <Formulario 
         times={times.map(time => time.nome)} 
         aoColaboradorCadastrado={colaborador => aoNovoColaboradorAdicionado(colaborador)}

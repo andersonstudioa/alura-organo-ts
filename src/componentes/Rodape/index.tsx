@@ -1,7 +1,12 @@
+import { IRedeSocial } from "../../compartilhado/interfaces/IRedeSocial"
 import RedesSociais from "../RedesSociais"
 import "./Rodape.css"
 
-const Rodape = (props) => {
+interface RodapeProps {
+    infos: IRedeSocial[]
+}
+
+const Rodape = (props: RodapeProps) => {
     return (
         <footer className="rodape">
             <RedesSociais

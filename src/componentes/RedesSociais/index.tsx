@@ -1,6 +1,11 @@
+import { IRedeSocial } from "../../compartilhado/interfaces/IRedeSocial"
 import "./RedesSociais.css"
 
-const RedesSociais = (props) => {
+interface RedesSociaisProps {
+    itens: IRedeSocial[]
+}
+
+const RedesSociais = (props: RedesSociaisProps) => {
     return (
         <ul className="redes">
             {props.itens.map(item => {
